@@ -92,12 +92,14 @@ class Store{
             books=[];
         }else{
             books=JSON.parse(localStorage.getItem('books'));
+            //string to object
         }
         return books;
 
     }
     static addBook(book){
         const list=Store.getBooks();
+        //adding item to array
         list.push(book);
 
         localStorage.setItem('books',JSON.stringify(list));
@@ -108,6 +110,7 @@ class Store{
 
         list.forEach((book,index)=>{
             if(book.isbn==isbn){
+                //removing item from array
                 list.splice(index,1);
             }
         });
